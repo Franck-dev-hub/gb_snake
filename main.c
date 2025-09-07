@@ -1,10 +1,17 @@
+/* gbdk 2020 */
 #include <gb/gb.h>
 
-#include "tile_map.h"
-#include "tile_set.h"
+/* Custom */
+#include "game.h"
+#include "screen_title.h"
 
 void main(void) {
-    set_bkg_data(0, 5, tile_set);
-    set_bkg_tiles(0, 0, 20, 18, tile_map);
-    SHOW_BKG;
+	while (1)
+	{
+		screen_title();
+		game();
+
+		waitpad(J_START);
+		waitpadup();
+	}
 }
